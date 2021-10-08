@@ -1,0 +1,46 @@
+{{!
+    Course activities.
+
+    Classes required for JS:
+    * None
+
+    Data attibutes required for JS:
+    * None
+
+    Context variables required for this template:
+    * modules
+    * cmid
+    * modulename
+    * url
+    * createddate
+    * completionstatus
+}}
+<div data-region="course-activities">
+<table class="generaltable fullwidth">
+    <thead>
+        <tr>
+            <th scope="col">{{#str}}cmid, block_course_activities{{/str}}</th>
+            <th scope="col">{{#str}}modulename, block_course_activities{{/str}}</th>
+            <th scope="col">{{#str}}createddate, block_course_activities{{/str}}</th>
+            <th scope="col">{{#str}}completionstatus, block_course_activities{{/str}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#modules.0}}
+            {{#modules}}
+            <tr>
+                <td>{{cmid}}</td>
+                <td><a href="{{url}}">{{{icon}}}{{{modulename}}}</a></td>
+                <td>{{createddate}}</td>
+                <td>{{completionstatus}}</td>
+            </tr>
+            {{/modules}}
+        {{/modules.0}}
+        {{^modules.0}}
+            <tr>
+                <td colspan="4" align="center">{{#str}}no_record, block_course_activities{{/str}}</td>
+            </tr>
+        {{/modules.0}}
+    </tbody>
+</table>
+</div>
