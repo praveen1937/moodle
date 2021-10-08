@@ -89,7 +89,7 @@ class block_course_activities extends block_base {
             $createddate = date('d-M-Y' , $cm->added);
             $completionstate = $DB->get_field('course_modules_completion' , 'completionstate' ,
                                                 array('coursemoduleid' => $cm->id , 'userid' => $USER->id));
-            $completionstatus = get_string('notcompleted', 'block_course_activities');
+            $completionstatus = '-';
             if ($completionstate == 1) {
                 $completionstatus = get_string('completed', 'block_course_activities');
             }
